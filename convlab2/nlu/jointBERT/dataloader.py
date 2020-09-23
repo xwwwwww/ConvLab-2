@@ -95,7 +95,7 @@ class Dataloader:
         return split_tokens, new_tag_seq, new2ori
 
     def seq_tag2id(self, tags):
-        return [self.tag2id[x] for x in tags if x in self.tag2id]
+        return [self.tag2id[x] if x in self.tag2id else self.tag2id['O'] for x in tags]
 
     def seq_id2tag(self, ids):
         return [self.id2tag[x] for x in ids]
