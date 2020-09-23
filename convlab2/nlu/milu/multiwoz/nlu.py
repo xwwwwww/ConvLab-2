@@ -39,7 +39,6 @@ class MILU(NLU):
         if not os.path.isfile(archive_file):
             if not model_file:
                 raise Exception("No model for MILU is specified!")
-            print('model file = ',model_file)
             archive_file = cached_path(model_file)
 
         archive = load_archive(archive_file,
